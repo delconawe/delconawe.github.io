@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0919f8;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #3700ff;
+}
+
+/* Contenedor principal */
+.container {
+    margin: auto;
+    max-width: 1200px;
+    display: flex;  /* Flexbox para alinearlas en fila */
+    justify-content: space-between;  /* Para distribuir las imágenes uniformemente */
+    flex-wrap: wrap;  /* Permite que las imágenes se ajusten si el tamaño de la pantalla es pequeño */
+}
+
+/* Estilo de los juegos */
+.juego {
+    position: relative;
+    margin-bottom: 20px;
+    width: 23%;  /* Ocupa el 23% del contenedor, de modo que se alineen 4 imágenes por fila */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo para las imágenes */
+.imagen-juego {
+    width: 100%;  /* Ajusta las imágenes al tamaño del contenedor */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(5, 40, 238);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de elevarse cuando el mouse pasa sobre la imagen */
+.juego:hover .imagen-juego {
+    transform: scale(1.1);
+}
+
+/* Mostrar el texto con una animación */
+.juego:hover h3, .juego:hover p {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Inicialmente, las etiquetas de texto están ocultas */
+.juego h3, .juego p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para el botón de regreso */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3700ff;
+    color: rgb(157, 13, 253);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.boton:hover {
+    background-color: #5900ff;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>el carlos es un pendejo al chile, si o no?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #00f77bcc;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #c71291;
+        }
+        p {
+            font-size: 18px;
+        }
+        .container {
+            background: rgb(0, 4, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        /* Estilo para el formulario */
+        .formulario {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgb(255, 0, 85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .formulario input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ff0000;
+        }
+
+        .mensaje {
+            text-align: center;
+            color: black;
+            margin-top: 10px;
+        }
+
+        .exito {
+            color: rgb(245, 241, 6);
+            font-weight: bold;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Top Juegos</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Enlazamos el archivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Top Juegos</h1>
+        <a href="top-juegos.html" class="boton">Ver Top Juegos</a>
+    </div>
+</head>
+<body>
+    <div class="container">
+        <h1>arriba conalep y Re- que me gusta</h1>
+        <img class="imagen-animada" src="mikuxd.jpg" alt="Descripción de la imagen">
+        <div id="videoContainer">    
+        <video id="calacawe" controls width="600">
+            <source src="calacawe.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <p>me maman los limones xdxdxd</p>
+    </div>
+
+    <script>
+        var video = document.getElementById("calacawe");
+
+        var posX = 0;
+        var posY = 0;
+        var velocidadX = 2;
+        var velocidadY = 2;
+
+        video.addEventListener('loadeddata', function() {
+            var videoWidth = video.videoWidth;
+            var videoHeight = video.videoHeight;
+
+            function moverVideo() {
+                var anchoVentana = window.innerWidth;
+                var altoVentana = window.innerHeight;
+
+                posX += velocidadX;
+                posY += velocidadY;
+
+                if (posX + videoWidth >= anchoVentana || posX <= 0) {
+                    velocidadX = -velocidadX;
+                }
+                if (posY + videoHeight >= altoVentana || posY <= 0) {
+                    velocidadY = -velocidadY;
+                }
+
+                video.style.left = posX + "px";
+                video.style.top = posY + "px";
+
+                requestAnimationFrame(moverVideo);
+            }
+
+            moverVideo();
+        });
+    </script>
+    <div class="formulario">
+        <h3>Registro</h3>
+        <form id="formularioRegistro" onsubmit="mostrarMensaje(event)">
+            <input type="text" id="usuario" placeholder="Usuario" required><br>
+            <input type="password" id="contraseña" placeholder="Contraseña" required><br>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <!-- Mensaje debajo del formulario -->
+    <div class="mensaje" id="mensaje">
+        <p>¡profe ibarra, con todo respeto, pase rutina de nalga!</p>
+    </div>
+
+    <!-- Script para mostrar mensaje de éxito -->
+    <script>
+        function mostrarMensaje(event) {
+            event.preventDefault(); // Prevenir que el formulario se envíe realmente
+
+            const usuario = document.getElementById("usuario").value;
+            const contraseña = document.getElementById("contraseña").value;
+
+            if (usuario && contraseña) {
+                document.getElementById("mensaje").innerHTML = `<p class="exito">jaja al chile es pura jalada, no funciona :v, ${usuario}.</p>`;
+            }
+        }
+    </script>
+    <div class="confirmacion" id="confirmacion">
+        <p>¿Quieres quitar el video?</p>
+        <button onclick="quitarVideo(true)">Sí</button>
+        <button onclick="quitarVideo(false)">No</button>
+    </div>
+    
+    <style>
+        .confirmacion {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            display: none;
+            z-index: 1001;
+        }
+    
+        .confirmacion button {
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+    
+    <script>
+        function mostrarConfirmacion() {
+            document.getElementById("confirmacion").style.display = 'block';
+        }
+    
+        function quitarVideo(decision) {
+            if (decision) {
+                document.getElementById("videoContainer").style.display = 'none';
+            }
+            document.getElementById("confirmacion").style.display = 'none';
+        }
+    
+        window.onload = function() {
+            setTimeout(mostrarConfirmacion, 5000); // Muestra el mensaje 5 segundos después de cargar la página
+        }
+    </script>
+    <!-- Enlace a la página de contenido -->
+<div class="recuadro">
+    <a href="carlos.html" onclick="return pedirContraseña()">nothing</a>
+</div>
+
+<script>
+    function pedirContraseña() {
+        var contraseña = prompt("Por favor, ingresa la contraseña para acceder al contenido:");
+        
+        // Contraseña correcta (puedes cambiarla a la que prefieras)
+        if (contraseña === "motadeidad") {
+            return true;  // Permite acceder
+        } else {
+            alert("Contraseña incorrecta. Inténtalo nuevamente.");
+            return false;  // No permite acceder
+        }
+    }
+</script>
+
+</body>
+</html>
